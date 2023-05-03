@@ -1,0 +1,47 @@
+{% if page.header_top or social_icons_header_option %}
+  {% include '@tarapro/template-parts/header_top.html.twig' %}
+{% endif %}
+<header class="header">
+  <div class="container">
+    <div class="header-container">
+    {% if page.site_branding %}
+      <div class="site-branding">
+        {{ page.site_branding }}
+      </div>
+    {% endif %}
+<div class="header-right">
+<!-- Start: primary menu region -->
+{% if page.primary_menu %}
+<div class="mobile-menu">
+<i class="fa fa-bars" aria-hidden="true"></i>
+</div>
+<div class="primary-menu-wrapper">
+<div class="menu-wrap">
+<div class="close-mobile-menu">X</div>
+{{ page.primary_menu }}
+</div>
+</div>
+{% endif %}
+<!-- End: primary menu region -->
+{% if page.search_box %}
+<div class="full-page-search">
+<div class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></div> <!--/.search icon -->
+<div class="search-box">
+  <div class="search-box-close"></div>
+  <div class="search-box-content">
+    {{ page.search_box }}
+  </div>
+  <div class="search-box-close"></div>
+</div><!--/search-box-->
+</div> <!--/.full-page-search -->
+{% endif %} <!--/end if for page.search_box -->
+  {% if animated_sidebar_option %}
+    <div class="sliding-panel-icon">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+  {% endif %} <!--/end if for animated_sidebar_option -->
+</div> <!--/.header-right -->
+  </div> <!--/.header-container -->
+  </div> <!--/.container -->
+</header><!-- /.header -->
+<!-- End: Header -->

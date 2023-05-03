@@ -1,0 +1,10 @@
+<div class="sliding-sidebar animated-panel-from-right">
+{% if page.sidebar_sliding %}
+  <div class="sliding-sidebar-container">
+    <div class="close-animated-sidebar">
+      <i class="fa fa-times-circle" aria-hidden="true"></i>
+    </div>
+    {{ page.sidebar_sliding }}
+  </div>
+{% endif %}<!-- /page.sidebar_sliding -->
+</div> <!-- /..sliding-sidebar -->

@@ -1,0 +1,77 @@
+# Social icons
+social_icons_header_option: 1
+social_icons_footer_option: 1
+facebook_url: 'https://www.facebook.com/idewdot'
+twitter_url: 'https://twitter.com/dewdots'
+instagram_url: 'https://www.instagram.com/google'
+linkedin_url: 'https://in.linkedin.com/company/google'
+youtube_url: 'https://www.youtube.com/user/Google'
+vk_url: ''
+whatsapp_url: ''
+github_url: ''
+telegram_url: ''
+vimeo_url: ''
+social_new_icon_code: ''
+
+#slider
+slider_show: 1
+slider_time: 10000
+slider_animateout: 'slideOutDown'
+slider_animatein: 'flipInX'
+slider_dots: 'true'
+slider_images: ''
+slider_code: ''
+
+# Header
+sticky_header_option: 1
+
+# Content
+google_font: 'local'
+preloader_option: 1
+comment_user_pic: 0
+node_author_pic: 0
+node_tags: 0
+node_share_page: 1
+node_share_article: 1
+node_share_other: 1
+node_share_front: 1
+iconmonstr: 0
+fontawesome_five: 0
+fontawesome_six: 0
+material_icon: 0
+bootstrapicons: 0
+
+# Sidebar
+front_sidebar: 0
+animated_sidebar_option: 1
+
+# Footer
+sticky_footer: 1
+copyright_text: 1
+copyright_text_custom: ''
+scrolltotop_on: 1
+cookie_message: 1
+cookie_message_custom: ''
+
+# Addtional css
+css_extra: 0
+css_code: ''
+insert_head: 0
+head_code: ''
+insert_body_start: 0
+body_start_code: ''
+insert_body_end: 0
+body_end_code: ''
+
+# Color
+color_scheme: 'color_default'
+bg_body: '#F9F6F3'
+bg_header: '#ffffff'
+color_primary: '#D6620E'
+color_primary_light: '#F2E8DD'
+color_secondary: '#A7BD43'
+color_dark: '#323D47'
+color_light: '#E5E2DC'
+color_border: '#dbdbd3'
+color_text: '#4A4A4A'
+color_heading: '#222222'

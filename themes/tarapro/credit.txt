@@ -1,0 +1,34 @@
+Google Fonts
+-------------------
+https://fonts.google.com/
+
+
+
+Owl Carousel
+-------------------
+https://owlcarousel2.github.io/OwlCarousel2/
+
+
+FontAwesome
+-------------------
+https://fontawesome.com
+
+
+Cookie Alert by Wruczek
+-------------------
+https://github.com/Wruczek/Bootstrap-Cookie-Alert
+
+
+jQuery-viewport-checker
+-------------------
+https://github.com/dirkgroenen/jQuery-viewport-checker
+
+
+Demo slider image
+---------------------
+https://unsplash.com
+
+Please Note:
+Images used in this theme are for demo purpose only.
+All images are copyrighted to their respective owners.
+They should not be used on your website.

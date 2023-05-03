@@ -1,0 +1,8 @@
+<div class="share-node animate-fadeIn">
+  <h3 class="share-node-title"><i class="fa fa-share-alt" aria-hidden="true"></i> {{ 'Share This Page'|t }}</h3>
+  <ul class="social-icons">
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url('<current>') }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    <li><a href="https://twitter.com/share?url={{ url('<current>') }}/&text={{ node.label }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url('<current>') }}&title={{ node.label }}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+  </ul>
+</div> <!-- /.share-node -->

@@ -1,0 +1,87 @@
+# Global stylings, css. These will be loaded on every pages.
+global-styling:
+  version: VERSION
+  css:
+    component:
+      css/animate.css: {}
+      css/slider.css: {}
+      css/font-awesome.css: {}
+    theme:
+      css/style.css: {}
+  js:
+    js/slider.js: {}
+    js/viewportchecker.js: {}
+    js/cookiealert.js: {}
+    js/tarapro.js: {}
+  dependencies:
+    - core/jquery
+
+# Google Fonts from CDN
+googlefontscdn:
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Open+Sans|Roboto: { type: external }
+
+# Google Fonts from local
+googlefontslocal:
+  css:
+    theme:
+      css/font.css: {}
+
+# Book
+book:
+  version: VERSION
+  css:
+    component:
+      css/book.css: {}
+
+# FontAwesome 5
+fontawesome5:
+  version: 5.15.4
+  css:
+    component:
+      css/fontawesome5.css: {weight: -10}
+
+# FontAwesome 6
+fontawesome6:
+  version: 6.1.2
+  css:
+    component:
+      css/fontawesome6.css: {weight: -10}
+
+# iconmonstr font icons
+iconmonstr:
+  version: 1.3.0
+  css:
+    component:
+      css/iconmonstr.css: {}
+
+# Google Material Icons
+material:
+  version: 4.0.0
+  css:
+    component:
+      css/material.css: {}
+
+# maintenance page
+maintenance:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance.css: {}
+
+# Theme settings
+theme-settings:
+  version: VERSION
+  css:
+    theme:
+      css/theme-settings.css: {}
+
+# Load jquery in head
+hjs:
+  version: VERSION
+  header: true
+  js:
+    js/blank.js: {}
+  dependencies:
+    - core/jquery

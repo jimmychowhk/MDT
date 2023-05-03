@@ -1,0 +1,197 @@
+/* Status message
+-------------------------------------- */
+.message,
+.message-success,
+.message-info,
+.message-error,
+.message-warning,
+.message-announcement,
+.message-notice {
+  position: relative;
+  color: #ffffff;
+  text-shadow: none;
+  margin: 20px 0;
+  padding: 14px 14px 14px 64px;
+}
+.message em,
+.message-success em,
+.message-info em,
+.message-error em,
+.message-warning em,
+.message-announcement em,
+.message-notice em {
+  color: #ffffff;
+  font-style: italic;
+  border-bottom: 1px dotted #ffffff;
+}
+.message p,
+.message-success p,
+.message-info p,
+.message-error p,
+.message-warning p,
+.message-announcement p,
+.message-notice p {
+  margin: 0;
+}
+.message a,
+.message-success a,
+.message-info a,
+.message-error a,
+.message-warning a,
+.message-announcement a,
+.message-notice a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.message-status,
+.message-success {
+  background: #89ad32;
+}
+.message-status::before,
+.message-success::before {
+  content: "\f046";
+  background-color: #759625;
+}
+.message-error {
+  background: #c94d1c;
+}
+.message-error::before {
+  content: '\f06a';
+  background-color: #b3461b;
+}
+.message-warning {
+  background: #cd5a0a;
+}
+.message-warning::before {
+  content: "\f071";
+  background-color: #a44707;
+}
+.message-info {
+  background: #5a82a1;
+}
+.message-info::before {
+  content: "\f05a";
+  background-color: #3e6584;
+}
+.message-announcement {
+  background: #46c280;
+}
+.message-announcement::before {
+  content: "\f0a1";
+  background-color: #34a268;
+}
+.message-notice {
+  background: #afa82e;
+}
+.message-notice::before {
+  content: "\f0a2";
+  background-color: #9b941b;
+}
+.message-status::before,
+.message-success::before,
+.message-error::before,
+.message-warning::before,
+.message-info::before,
+.message-announcement::before,
+.message-notice::before {
+  font-family: "FontAwesome";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 53px;
+  text-align: center;
+  height: 100%;
+  line-height: 53px;
+  font-size: 30px;
+}
+
+/* Rss feed icon
+-------------------------------------- */
+.feed-icon {
+  position: relative;
+  display: block;
+  font-size: 0;
+  min-height: 40px;
+  margin: 10px 0;
+}
+.feed-icon::before {
+  position: absolute;
+  content: "\f09e";
+  font-family: 'FontAwesome';
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 2px solid var(--color-primary);
+}
+
+/* Admin Tabs */
+.page-tabs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 10px 0;
+  padding: 0;
+  border-bottom: 2px solid var(--color-primary-light);
+}
+.page-tabs a {
+  background-color: var(--color-primary-light);
+  padding: 4px 10px;
+  border-right: 2px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+.active-page-tab a,
+.page-tabs a:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+/* pager */
+.pager ul.pager__items {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  list-style: none;
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 1rem 0;
+}
+.pager__item a {
+  background-color: var(--light);
+  padding: 8px 14px;
+  border: 3px solid #ffffff;
+  border-radius: 4px;
+}
+.pager__item a:hover,
+.pager__item.is-active a {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+/* Scroll To Top
+------------------------- */
+.scrolltop {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  bottom: 10px;
+  width: 48px;
+  height: 48px;
+  background: var(--bold-color);
+  color: #ffffff;
+  border-radius: 6px;
+  z-index: 20;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+.scrolltop i {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.scrolltop:hover {
+  background: var(--color-primary);
+}

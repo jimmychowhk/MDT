@@ -1,0 +1,30 @@
+/* Homepage
+--------------------------- */
+.section,
+.homepage-content {
+  position: relative;
+  z-index: 2;
+}
+.region-content-home {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.homepage-content .block-title,
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.homepage-content .block-title::after,
+.title::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  width: 50px;
+  height: 2px;
+  margin-left: -25px;
+  background: var(--color-primary);
+}

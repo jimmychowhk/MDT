@@ -1,0 +1,152 @@
+<?php
+
+/**
+ * @file
+ * Contains Tarapro theme override and preprocess functions.
+ */
+use Drupal\file\Entity\File;
+/**
+  * Sanitise input urls.
+  */
+function santise_val_url($url) {
+  if ($url != '') {
+
+    // Sanitise (remove all illegal characters) from url.
+    $url = filter_var($url, FILTER_SANITIZE_URL);
+
+    // Validate url.
+    if (filter_var($url, FILTER_VALIDATE_URL) == TRUE) {
+      $url = $url;
+    } else {
+      $url = '#';
+    }
+    return $url;
+  }
+}
+
+/* *
+ * Tara page preprocess.
+ * Define variables for theme settings.
+ */
+function tarapro_preprocess_page(array &$variables) {
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+  $variables['slider_show'] = theme_get_setting('slider_show', 'tarapro');
+  $variables['slider_code'] = theme_get_setting('slider_code', 'tarapro');
+  $variables['social_icons_header_option'] = theme_get_setting('social_icons_header_option', 'tarapro');
+  $variables['social_icons_footer_option'] = theme_get_setting('social_icons_footer_option', 'tarapro');
+  $variables['facebook_url'] = santise_val_url(theme_get_setting('facebook_url', 'tarapro'));
+  $variables['twitter_url'] = santise_val_url(theme_get_setting('twitter_url', 'tarapro'));
+  $variables['instagram_url'] = santise_val_url(theme_get_setting('instagram_url', 'tarapro'));
+  $variables['linkedin_url'] = santise_val_url(theme_get_setting('linkedin_url', 'tarapro'));
+  $variables['youtube_url'] = santise_val_url(theme_get_setting('youtube_url', 'tarapro'));
+  $variables['vimeo_url'] = santise_val_url(theme_get_setting('vimeo_url', 'tarapro'));
+  $variables['vk_url'] = santise_val_url(theme_get_setting('vk_url', 'tarapro'));
+  $variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'tarapro'));
+  $variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'tarapro'));
+  $variables['telegram_url'] = santise_val_url(theme_get_setting('telegram_url', 'tarapro'));
+  $variables['social_new_icon_code'] = theme_get_setting('social_new_icon_code', 'tarapro');
+  $variables['sticky_header_option'] = theme_get_setting('sticky_header_option', 'tarapro');
+  $variables['front_sidebar'] = theme_get_setting('front_sidebar', 'tarapro');
+  $variables['animated_sidebar_option'] = theme_get_setting('animated_sidebar_option', 'tarapro');
+  $variables['scrolltotop_on'] = theme_get_setting('scrolltotop_on', 'tarapro');
+  $variables['copyright_text'] = theme_get_setting('copyright_text', 'tarapro');
+  $variables['copyright_text_custom'] = theme_get_setting('copyright_text_custom', 'tarapro');
+  $variables['cookie_message'] = theme_get_setting('cookie_message', 'tarapro');
+  $variables['cookie_message_custom'] = theme_get_setting('cookie_message_custom', 'tarapro');
+  $variables['iconmonstr'] = theme_get_setting('iconmonstr', 'tarapro');
+  $variables['fontawesome_five'] = theme_get_setting('fontawesome_five', 'tarapro');
+  $variables['fontawesome_six'] = theme_get_setting('fontawesome_six', 'tarapro');
+  $variables['material_icon'] = theme_get_setting('material_icon', 'tarapro');
+  $variables['bootstrapicons'] = theme_get_setting('bootstrapicons', 'tarapro');
+  $variables['sticky_footer'] = theme_get_setting('sticky_footer', 'tarapro');
+	$slider_images = theme_get_setting('slider_images', 'tarapro');
+	if(!empty($slider_images)) {
+		foreach ($slider_images as $fid) {
+			$file = File::load($fid);
+			$file->setPermanent();
+			$file->save();
+			$file_usage = \Drupal::service('file.usage');
+			$file_usage->add($file, 'tarapro', 'theme', $fid);
+		}
+	}
+}
+
+/* *
+ * Node preprocess.
+ * Define node variables for theme settings.
+ */
+function tarapro_preprocess_node(array &$variables) {
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['node_author_pic'] = theme_get_setting('node_author_pic', 'tarapro');
+	$variables['node_tags'] = theme_get_setting('node_tags', 'tarapro');
+  $variables['node_share_page'] = theme_get_setting('node_share_page', 'tarapro');
+  $variables['node_share_article'] = theme_get_setting('node_share_article', 'tarapro');
+  $variables['node_share_other'] = theme_get_setting('node_share_other', 'tarapro');
+  $variables['node_share_front'] = theme_get_setting('node_share_front', 'tarapro');
+}
+
+/* *
+ * Comment preprocess.
+ */
+function tarapro_preprocess_comment(array &$variables) {
+  $variables['comment_user_pic'] = theme_get_setting('comment_user_pic', 'tarapro');
+}
+
+/**
+ * html preprocess for TaraPro theme.
+ * Adds body classes if certain regions have content.
+ * Used for creating different page layout
+ */
+function tarapro_preprocess_html(&$variables) {
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['base_path'] = base_path();
+  $variables['preloader_option'] = theme_get_setting('preloader_option', 'tarapro');
+  $variables['google_font'] = theme_get_setting('google_font', 'tarapro');
+  $variables['slider_show'] = theme_get_setting('slider_show', 'tarapro');
+	$variables['slider_time'] = theme_get_setting('slider_time', 'tarapro');
+  $variables['slider_animateout'] = theme_get_setting('slider_animateout', 'tarapro');
+  $variables['slider_animatein'] = theme_get_setting('slider_animatein', 'tarapro');
+  $variables['slider_dots'] = theme_get_setting('slider_dots', 'tarapro');
+  // Insert custom codes
+  $variables['css_extra'] = theme_get_setting('css_extra', 'tarapro');
+  $variables['css_code'] = theme_get_setting('css_code', 'tarapro');
+	$variables['insert_head'] = theme_get_setting('insert_head', 'tarapro');
+	$variables['head_code'] = theme_get_setting('head_code', 'tarapro');
+	$variables['insert_body_start'] = theme_get_setting('insert_body_start', 'tarapro');
+	$variables['body_start_code'] = theme_get_setting('body_start_code', 'tarapro');
+	$variables['insert_body_end'] = theme_get_setting('insert_body_end', 'tarapro');
+	$variables['body_end_code'] = theme_get_setting('body_end_code', 'tarapro');
+  $variables['sticky_footer'] = theme_get_setting('sticky_footer', 'tarapro');
+
+  // color
+  $variables['color_scheme'] = theme_get_setting('color_scheme', 'tarapro');
+	$variables['bg_body'] = theme_get_setting('bg_body', 'tarapro');
+  $variables['bg_header'] = theme_get_setting('bg_header', 'tarapro');
+  $variables['color_primary'] = theme_get_setting('color_primary', 'tarapro');
+  $variables['color_primary_light'] = theme_get_setting('color_primary_light', 'tarapro');
+  $variables['color_secondary'] = theme_get_setting('color_secondary', 'tarapro');
+  $variables['color_dark'] = theme_get_setting('color_dark', 'tarapro');
+  $variables['color_light'] = theme_get_setting('color_light', 'tarapro');
+  $variables['color_border'] = theme_get_setting('color_border', 'tarapro');
+  $variables['color_text'] = theme_get_setting('color_text', 'tarapro');
+  $variables['color_heading'] = theme_get_setting('color_heading', 'tarapro');
+}
+
+/* *
+ * Add current page to breadcrumb.
+ */
+ function tarapro_preprocess_breadcrumb(&$variables) {
+   $request = \Drupal::request();
+   $route_match = \Drupal::routeMatch();
+   $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+   if (!empty($page_title)) {
+     $variables['breadcrumb'][] = [
+       'text' => $page_title,
+     ];
+
+     // Add cache context based on url.
+     $variables['#cache']['contexts'][] = 'url';
+   }
+ }

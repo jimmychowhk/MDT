@@ -1,0 +1,133 @@
+/* Sidebar
+----------------------- */
+.sidebar {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+.region-sidebar-first,
+.region-sidebar-second {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sidebar .block {
+  background-color: #ffffff;
+  padding: 15px 10px;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+.sidebar .block-title {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  padding-left: 6px;
+  border-left: 2px solid var(--color-primary);
+}
+.sidebar ul {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar li {
+  padding: 6px 0;
+  border-bottom: 2px solid var(--border);
+  transition: padding 0.3s ease;
+}
+.sidebar li:last-child {
+  border: 0;
+}
+.sidebar li:hover {
+  padding: 6px 0 6px 6px;
+}
+/* search block in sidebar */
+.sidebar .form-search {
+  width: 100%;
+}
+/* Sidebar -> Animated sidebar. */
+.sliding-panel-icon {
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  border-left: 1px solid #b4b4b4;
+  cursor: pointer;
+}
+.sliding-panel-icon i {
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+.sliding-sidebar {
+  position: relative;
+  visibility: hidden;
+  z-index: 101;
+  transition: visibility 0s 0.4s;
+}
+.sliding-sidebar.animated-panel-is-visible {
+  visibility: visible;
+  transition: visibility 0s 0s;
+}
+.sliding-sidebar-container {
+  position: fixed;
+  top: 0;
+  width: 90%;
+  max-width: 360px;
+  height: 100%;
+  padding: 16px 20px;
+  background: #333;
+  color: #ddd;
+  overflow-x: auto;
+  transition: transform 0.4s 0s;
+}
+.animated-panel-from-right .sliding-sidebar-container {
+  right: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.animated-panel-from-left .sliding-sidebar-container {
+  left: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+.animated-panel-is-visible .sliding-sidebar-container {
+  transition-delay: 0s;
+  transform: translate3d(0, 0, 0);
+}
+.close-animated-sidebar {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+.close-animated-sidebar i {
+  font-size: 2em;
+  cursor: pointer;
+}
+.sliding-sidebar .block-title {
+  position: relative;
+  padding: 0 0 8px 0;
+  color: #fff;
+  text-align: center;
+}
+.sliding-sidebar h3.block-title {
+  font-size: 1.2em;
+}
+.sliding-sidebar .block-title::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 1px;
+  margin: 0 auto;
+  margin: 0 auto;
+  background: var(--color-primary);
+}
+.sliding-sidebar a {
+  color: #fff;
+  border-bottom: 1px dotted #a9a9a9;
+  transition: all 0.4s ease;
+}
+.sliding-sidebar a:hover {
+  color: #fff;
+  border-bottom: 1px dashed #fff;
+}

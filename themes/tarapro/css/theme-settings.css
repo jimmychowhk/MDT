@@ -1,0 +1,13 @@
+.color-form {
+  max-width: 100%;
+}
+.color-palette {
+  display: flex;
+  width: calc(100% - 200px);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.color-form .form-item {
+  flex: 1 0 400px;
+  margin: 0;
+}

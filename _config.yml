@@ -1,0 +1,17 @@
+# Site settings
+title: Mount Davis Technologies
+description: Mount Davis Technologies
+baseurl: "/mdt" # the subpath of your site, e.g. /blog/
+url: "https://jimmychowhk.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-primer
+
+gems:
+  - jekyll-seo-tag
+  - jekyll-multiple-languages-plugin
+  - jekyll-translation
+
+plugins:
+  - jekyll-github-metadata

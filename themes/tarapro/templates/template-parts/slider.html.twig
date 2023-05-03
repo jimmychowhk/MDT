@@ -1,0 +1,9 @@
+<section id="slider" class="frontpage-slider">
+  <div class="owl-carousel home-slider">
+    {% if slider_code != '' %}
+      {{ slider_code | striptags('<div>,<span>,<ul>,<ol>,<li>,<p>,<a>,<img>,<video>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<em>,<strong>,<br>,<button>,<i>,<source>,<hr>,<sup>,<sub>') | raw }}
+    {% else %}
+      {% include '@tarapro/template-parts/default-slider.html.twig' %}
+    {% endif %}
+  </div> <!--/.home-slider -->
+</section>

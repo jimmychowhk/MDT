@@ -1,0 +1,110 @@
+{% if sticky_footer %}
+<section id="last-section"></section>
+{% endif %}
+<!-- Start: Footer -->
+<footer id="footer">
+  <div class="footer">
+    <div class="container">
+    {% if page.footer_top %}
+      <section class="footer-top">
+        {{ page.footer_top }}
+      </section>
+    {% endif %}<!-- /footer-top -->
+    {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+     <section class="footer-blocks">
+        {% if page.footer_first %}
+          <div class="footer-block">
+            {{ page.footer_first }}
+          </div>
+        {% endif %}<!--/footer-first -->
+        {% if page.footer_second %}
+          <div class="footer-block">
+            {{ page.footer_second }}
+          </div>
+        {% endif %}<!--/footer-second -->
+        {% if page.footer_third %}
+          <div class="footer-block">
+            {{ page.footer_third }}
+          </div>
+        {% endif %}<!--/footer-third -->
+        {% if page.footer_fourth %}
+          <div class="footer-block">
+            {{ page.footer_fourth }}
+          </div>
+        {% endif %}<!--/footer-fourth -->
+     </section> <!--/footer-blocks -->
+   {% endif %} {# end if for footer one, two, three, four blocks #}
+  {% if copyright_text or all_icons_show %}
+    <section class="footer-bottom-middle">
+      {% if copyright_text %}
+        <div class="copyright">
+          {% if copyright_text_custom != '' %}
+            {{ copyright_text_custom | striptags('<p>,<div>,<span>,<a>,<img>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<em>,<strong><br><hr><i>') | raw }}
+          {% else %}
+            &copy; {{ "now"|date("Y") }} {{ site_name }}, All rights reserved.
+          {% endif %} <!-- end if copyright_text_custom -->
+        </div><!-- /copyright -->
+      {% endif %} <!-- end if for copyright -->
+      {% if social_icons_footer_option %}
+        <div class="footer-bottom-middle-right">
+          {% include '@tarapro/template-parts/social-icons.html.twig' %}
+        </div>
+      {% endif %}<!-- end if social_icons_footer_option -->
+    </section><!-- /footer-bottom-middle -->
+  {% endif %} <!-- end condition if copyright or social icons -->
+  {% if page.footer_bottom %}
+    <div class="footer-bottom">
+      {{ page.footer_bottom }}
+    </div> <!--/.footer-bottom -->
+  {% endif %} <!-- end condition for footer_bottom -->
+    </div><!-- /.container -->
+  </div> <!--/.footer -->
+</footer>
+{% if cookie_message %}
+  {% include '@tarapro/template-parts/cookie.html.twig' %}
+{% endif %}
+{% if scrolltotop_on %}
+<div class="scrolltop"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+{% endif %}
+<!-- End: Footer -->
+{% if iconmonstr %}
+{{ attach_library('tarapro/iconmonstr') }}
+{% else %}
+<style>
+.im {
+  display: none;
+}
+</style>
+{% endif %}
+{% if fontawesome_five %}
+{{ attach_library('tarapro/fontawesome5') }}
+{% else %}
+<style>
+.fab {
+  display: none;
+}
+</style>
+{% endif %}
+{% if fontawesome_six %}
+{{ attach_library('tarapro/fontawesome6') }}
+{% endif %}
+{% if bootstrapicons %}
+  {{ attach_library('tarapro/bootstrap-icons') }}
+{% endif %}
+{% if material_icon %}
+{{ attach_library('tarapro/material') }}
+{% else %}
+<style>
+.material-icons {
+  display: none;
+}
+</style>
+{% endif %}
+{% if sticky_header_option %}
+<style>
+.header {
+  position: sticky;
+  top: 0;
+}
+</style>
+{% endif %}

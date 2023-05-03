@@ -1,0 +1,39 @@
+/* Clearing
+--------------------------------- */
+.clear {
+  clear: both;
+  width: 100%;
+}
+#highlighted::before,
+#last-section::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+#highlighted::after,
+#last-section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#main-wrapper::before,
+#homepage-content-wrapper::before,
+#main-wrapper::after,
+#homepage-content-wrapper::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.page-title-wrap::before,
+.page-title-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#node-comment::before,
+#node-comment::after {
+  content: "";
+  display: table;
+  clear: both;
+}

@@ -1,0 +1,14 @@
+<!-- Start Cookie Alert -->
+<div class="cookiealert" role="alert">
+  <div class="container">
+    <p>
+      {% if cookie_message_custom != '' %}
+        {{ cookie_message_custom | striptags('<p>,<div>,<span>,<a>,<img>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<em>,<strong>,<br>,<hr>,<i>') | raw }}
+      {% else %}
+        This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.
+      {% endif %}
+      <button type="button" class="acceptcookies" aria-label="Close">{{ 'I agree'|t }}</button>
+    </p>
+  </div>
+</div>
+<!-- End Cookie Alert -->

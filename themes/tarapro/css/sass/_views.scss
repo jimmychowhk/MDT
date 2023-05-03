@@ -1,0 +1,23 @@
+/* Drupal core -> view */
+.views-view-grid .views-col {
+  padding: 5px;
+}
+.views-view-grid .views-field-title {
+  padding: 10px;
+  font-family: var(--font-heading);
+  font-size: 1.2em;
+  background: #ccc;
+  border: 2px solid #fff;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  text-align: center;
+}
+.views-view-grid .views-field-title:hover {
+  background: #fff;
+  border: 2px solid #ccc;
+}
+.views-view-grid .views-field-title a {
+  color: #222;
+}
